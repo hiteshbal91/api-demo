@@ -2,7 +2,7 @@
 
 var config = {
     mongo: {
-        url: "mongodb://localhost",
+        url: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost",
         port: 27017,
         dbName: "ecomdemo",
         options: {
