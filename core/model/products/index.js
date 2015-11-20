@@ -10,14 +10,6 @@ var mongoose = require("mongoose"),
     Schema = mongoose.Schema,
     products;
 
-function getPrice(num) {
-    return (num/100).toFixed(2);
-}
-
-function setPrice(num) {
-    return num*100;
-}
-
 var productsSchema = new Schema({
         name: {
             type: String,
@@ -33,8 +25,7 @@ var productsSchema = new Schema({
         },
         price: {
             type: Number,
-            get: getPrice,
-            set: setPrice
+            required: true
         },
         categories: [
             {
