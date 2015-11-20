@@ -1,17 +1,11 @@
 'use strict';
 
 var config = {
+    // database and application configuration
     mongo: {
         url: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost",
         port: 27017,
-        dbName: "ecomdemo",
-        options: {
-            server: {
-                poolSize: 5,
-            },
-            user: "",
-            pass: ""
-        }
+        dbName: "ecomdemo"
     },
     port: 5000,
     env: process.env.NODE_ENV || "development"

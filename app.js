@@ -30,7 +30,7 @@ var server = app.listen(config.port, function() {
 // On the end of Node process, close the Mongoose connection
 process.on('SIGINT', function() {
     mongoose.connection.close(function () {
-        console.error('Database connection terminated.');
+        console.error('Database connection terminated as application is terminated.');
         process.exit(0);
     });
 });

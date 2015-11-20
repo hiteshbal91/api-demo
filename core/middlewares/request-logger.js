@@ -11,15 +11,19 @@ var logger = require('./../utils/logger').get();
 module.exports = function(config) {
     return function(req, res, next) {
         try {
+            // response headers settings and logging the incomging requests
             var xRuntime;
             if(!res.xruntime) res.xruntime = new Date();
             onHeaders(res, function() {
                 xRuntime = new Date() - this.xruntime;
-                this.setHeader('X-Runtime', xRuntime+"ms");
+                this.setHeader('X-Runtime', xRuntime + "ms");
                 // setting the configured headers
                 for(var key in config.headers) {
                     this.setHeader(key, config.headers[key])
                 }
+            });
+
+            res.on('finish', function () {
                 // setting the up the valid pattern
                 var validKeys = config.logs.variables.join("|");
                 var regexp = new RegExp("("+validKeys+")", "gi");

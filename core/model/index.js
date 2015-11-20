@@ -21,6 +21,7 @@ function Model() {
         mongoose.connection.on('error', function callback(err) {
             console.error("Database connection error: ", err.message);
             mongoose.connection.close();
+            process.exit(1);
         });
         // database open event
         mongoose.connection.once('connected', function callback() {
@@ -32,4 +33,4 @@ function Model() {
     }
 };
 
-module.exports = new Model();
+module.exports = Model();

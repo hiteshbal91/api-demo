@@ -74,7 +74,6 @@ Router
     .get(function(req, res, next) {
         if(req._category) {
             var _query = _.merge(req.query, {"categories": {"$in": [req._category._id]}});
-
             productsModel
                 .find(_query, {}, {}, function(err, documents) {
                     if(!err) {
