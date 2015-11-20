@@ -1,23 +1,47 @@
-//prerequsite
-
+#Prerequisite
 node >= 0.10.28
 mongodb >= 2.6
 
-//this application has the following routes
+#Start an application
+ 1. cd  /path/to/folder
+ 2. npm install
+ 3. npm start or node app
+**Note:** *make sure mongodb is started on the port specified in the config*
 
-GET /categories
-Gettting all the categories
+#REST APIs
+**GET /categories**
+*Gettting all the categories*
 
-POST /categories
-Creating new category
+**POST /categories**
+*Creating new category*
+Body
 
-GET /categories/cat_id/products
-Gettting all the products in the specified category
+    {
+    	"name": "Category",
+        "description": "Category description"
+    }
+Header
 
-GET /products
-Gettting all the products
+    Content-Type: "application/json"
 
-POST /products
-Creating new product
+**GET /categories/{cat_id}/products**
+*Gettting all the products in the specified category*
 
-Note: postman collection is attached to test it out
+**GET /products**
+*Gettting all the products*
+
+**POST /products**
+*Creating new product*
+Body
+
+    {
+    	"name": "Product",
+        "description": "Product description",
+        "price":  "42250",
+        "categories": [{cat_id}]
+    }
+Header
+
+    Content-Type: "application/json"
+
+**Note:** *postman collection is attached to test it out*
