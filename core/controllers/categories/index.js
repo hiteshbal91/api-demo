@@ -39,9 +39,9 @@ Router
             if(!err) {
                 res.status(201).jsonp(doc);
             } else {
-                next(err)
+                next(err);
             }
-        })
+        });
     });
 
 /*

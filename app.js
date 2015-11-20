@@ -37,7 +37,7 @@ process.on('SIGINT', function() {
 
 process.on('uncaughtException', function(err) {
     mongoose.connection.close();
-    console.error('Caught exception: ', err.message);
+    console.error('Uncaught exception: ', err.message);
     process.exit(0);
 });
 

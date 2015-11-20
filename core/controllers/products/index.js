@@ -33,14 +33,18 @@ Router
      Create new product
     */
     .post(function (req, res, next) {
-        var product = new productsModel(req.body);
-        product.save(function(err, doc) {
-            if(!err) {
-                res.status(201).jsonp(doc);
-            } else {
-                next(err)
-            }
-        });
+        try {
+            var product = new productsModel(req.body);
+            product.save(function(err, doc) {
+                if(!err) {
+                    res.status(201).jsonp(doc);
+                } else {
+                    next(err)
+                }
+            });
+        } catch(e) {
+            next(e);
+        }
     });
 
 Router

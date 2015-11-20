@@ -22,7 +22,9 @@ var productsSchema = new Schema({
         name: {
             type: String,
             required: true,
-            trim: true
+            trim: true,
+            index: true,
+            unique: true
         },
         description: {
             type: String,

@@ -12,11 +12,15 @@ var path = require('path'),
 
 var config = require('./../../config'),
     logger = require('./../utils/logger').get(),
+    context = require('./domain-context'),
     requestLogger = require('./request-logger');
 
 function Middlewares(app) {
     // setting the env variable
     app.set('env', config.env);
+
+    // setting the context for the incoming requests
+    app.use(context())
 
     // to compress the output result
     app.use(compression());
@@ -36,16 +40,17 @@ function Middlewares(app) {
     app.use(requestLogger(config))
 };
 
-Middlewares.errorHandlers = function(app) {
-    // catch 404 and forward error to the error handler
-    app.use(function(req, res, next) {
-        var err = new Error('Not Found');
-        err.status = 404;
-        next(err);
-    });
+Middlewares.notFound = function(app) {
 
-    // error handler - last handler for the incoming requests
-    app.use(function(err, req, res) {
+}
+
+Middlewares.errorHandlers = function(app) {
+    // catch 404 and error handler - last handler for the incoming requests
+    app.use(function(err, req, res, next) {
+        if(!err) {
+            err = new Error('Not Found');
+            err.status = 404;
+        }
         logger.debug({error: err.messge});
         res.status(err.status || 500).jsonp({error: err.message});
     });
