@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "test"
   },
   "dependencies": {
     "body-parser": "1.13.x",
@@ -14,6 +15,7 @@
     "mkdirp": "0.5.x",
     "mongoose": "4.1.x",
     "on-headers": "1.0.x",
-    "serve-favicon": "2.3.x"
+    "serve-favicon": "2.3.x",
+    "tape": "^4.2.2"
   }
 }

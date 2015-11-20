@@ -8,13 +8,20 @@ var mongoose = require ("mongoose");
 
 var config = require('./../../config');
 
-// to debug the mongoose queries and operations
-//mongoose.set('debug', true);
-
-function Model() {
+function Model(mode) {
     try {
-        var uriString = (config.mongo && config.mongo.url && config.mongo.dbName) ? config.mongo.url + ":" + (config.mongo.port || 27017) + "/" + config.mongo.dbName : "mongodb://localhost:27017/ecomdemo";
+        var settings = config.mongo,
+            defaultUrl = (mode == 'test') ? "mongodb://localhost:27017/test-ecomdemo" : "mongodb://localhost:27017/ecomdemo",
+            uriString;
+
+        // to debug the mongoose queries and operations
+        if(mode == 'test') {
+            mongoose.set('debug', settings.debug);
+            settings.dbName = "test-"+settings.dbName;
+        }
+
         // connecting to mongodb
+        uriString = (settings && settings.url && settings.dbName) ? settings.url + ":" + (settings.port || 27017) + "/" + settings.dbName : defaultUrl;
         mongoose.connect(uriString);
 
         // on error event close the db connection
@@ -33,4 +40,4 @@ function Model() {
     }
 };
 
-module.exports = Model();
+module.exports = Model;

@@ -12,6 +12,9 @@ var config = require('./config'),
     middlewares = require('./core/middlewares'),
     app = express();
 
+// loading the database
+database();
+
 // loading all the middlewares
 middlewares(app);
 

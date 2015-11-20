@@ -8,6 +8,7 @@ var _ = require('lodash'),
     Router = require('express').Router();
 
 var productsModel = require('./../../model/products'),
+    categoriesModel = require('./../../model/categories'),
     helper = require('./../../utils/helper');
 
 module.exports = exports = Router;
@@ -33,18 +34,33 @@ Router
      Create new product
     */
     .post(function (req, res, next) {
-        try {
-            var product = new productsModel(req.body);
-            product.save(function(err, doc) {
-                if(!err) {
-                    res.status(201).jsonp(doc);
-                } else {
-                    next(err)
-                }
-            });
-        } catch(e) {
-            next(e);
+        if(req.body && typeof req.body == "object") {
+            var categories = req.body.categories || [];
+            categories = (categories instanceof Array) ? _.uniq(categories) : [];
+            // preparing the query for the categories
+            categoriesModel
+                .find({"_id": {"$in": categories}})
+                .exec(function(err, documents) {
+                    if(!err) {
+                        req._categories = _.pluck(documents, '_id');
+                        next();
+                    } else {
+                        next(err);
+                    }
+                });
+        } else {
+            next(new Error('Malformed body.'));
         }
+    }, function(req, res, next) {
+        req.body.categories = req._categories;
+        var product = new productsModel(req.body)
+        product.save(function(err, doc) {
+            if(!err) {
+                res.status(201).jsonp(doc);
+            } else {
+                next(err)
+            }
+        });
     });
 
 Router

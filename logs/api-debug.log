@@ -58,3 +58,18 @@
 {"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":14885,"level":30,"msg":"2015-11-20T06:54:03.922Z :: [POST] - /products:(201) from [::ffff:127.0.0.1]","time":"2015-11-20T06:54:03.922Z","v":0}
 {"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":14885,"level":30,"msg":"2015-11-20T06:54:22.035Z :: [POST] - /products:(201) from [::ffff:127.0.0.1]","time":"2015-11-20T06:54:22.035Z","v":0}
 {"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":14885,"level":30,"msg":"2015-11-20T06:54:29.068Z :: [GET] - /products:(200) from [::ffff:127.0.0.1]","time":"2015-11-20T06:54:29.068Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":9385,"level":20,"msg":"","time":"2015-11-20T20:36:42.586Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":9385,"level":30,"msg":"2015-11-20T20:36:42.593Z :: [POST] - /products:(500) from [::ffff:127.0.0.1]","time":"2015-11-20T20:36:42.594Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":9385,"level":30,"msg":"2015-11-20T20:36:49.755Z :: [POST] - /products:(201) from [::ffff:127.0.0.1]","time":"2015-11-20T20:36:49.755Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10123,"level":30,"msg":"2015-11-20T20:38:20.544Z :: [POST] - /products:(404) from [::ffff:127.0.0.1]","time":"2015-11-20T20:38:20.545Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10141,"level":30,"msg":"2015-11-20T20:39:03.205Z :: [POST] - /products:(404) from [::ffff:127.0.0.1]","time":"2015-11-20T20:39:03.207Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10141,"level":30,"msg":"2015-11-20T20:39:28.707Z :: [POST] - /products:(404) from [::ffff:127.0.0.1]","time":"2015-11-20T20:39:28.707Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10176,"level":30,"msg":"2015-11-20T20:40:05.256Z :: [POST] - /products:(404) from [::ffff:127.0.0.1]","time":"2015-11-20T20:40:05.258Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10198,"level":30,"msg":"2015-11-20T20:40:26.371Z :: [POST] - /products:(404) from [::ffff:127.0.0.1]","time":"2015-11-20T20:40:26.373Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10222,"level":30,"msg":"2015-11-20T20:41:00.022Z :: [POST] - /products:(201) from [::ffff:127.0.0.1]","time":"2015-11-20T20:41:00.023Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10222,"level":30,"msg":"2015-11-20T20:41:41.790Z :: [GET] - /categories:(200) from [::ffff:127.0.0.1]","time":"2015-11-20T20:41:41.790Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10222,"level":20,"msg":"","time":"2015-11-20T20:42:09.500Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10222,"level":30,"msg":"2015-11-20T20:42:17.346Z :: [POST] - /products:(201) from [::ffff:127.0.0.1]","time":"2015-11-20T20:42:17.346Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10259,"level":20,"msg":"","time":"2015-11-20T20:43:28.146Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10259,"level":30,"msg":"2015-11-20T20:43:28.153Z :: [POST] - /products:(500) from [::ffff:127.0.0.1]","time":"2015-11-20T20:43:28.154Z","v":0}
+{"name":"api","hostname":"hitesh-HP-ProBook-4540s","pid":10259,"level":30,"msg":"2015-11-20T20:43:40.122Z :: [POST] - /products:(201) from [::ffff:127.0.0.1]","time":"2015-11-20T20:43:40.122Z","v":0}
