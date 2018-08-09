@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2018-08-08T20:09:32.021Z",
+    "end": "2018-08-08T20:09:32.141Z",
+    "duration": 120,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "9276cadb-da33-4611-afdc-8a9c038e7995",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "0f11107e-d52f-463d-9dd1-f05d5c015366",
+        "title": "Router testing",
+        "fullFile": "/Users/hitesh/new-things/battle-api/test/test.js",
+        "file": "/test/test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "Router testing \"before all\" hook",
+            "timedOut": false,
+            "duration": 52,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "Database.connect()\n    .then(() => {\n        done();\n    });",
+            "err": {},
+            "isRoot": false,
+            "uuid": "5c8104a5-195b-4ec7-bb95-3a43e1ef4391",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook",
+            "fullTitle": "Router testing \"after all\" hook",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "done();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "6899f75a-f2b4-40ce-ab89-5f3ce8470fe3",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "\"/search\" should provide search results",
+            "fullTitle": "Router testing \"/search\" should provide search results",
+            "timedOut": false,
+            "duration": 54,
+            "state": "passed",
+            "speed": "medium",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "Request\n    .get('/search?location=vasai')\n    .expect(200)\n    .then((res) => {\n        res.body.should.have.property('battles');\n        res.body.battles.should.be.of.length(1);\n        done();\n    });",
+            "err": {},
+            "isRoot": false,
+            "uuid": "1fc6179d-6172-4714-8d2d-728434abe736",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "1fc6179d-6172-4714-8d2d-728434abe736"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 54,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2018
+}
