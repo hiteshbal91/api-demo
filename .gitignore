@@ -1,3 +1,4 @@
 node_modules/*
+config/*
 !test/routes.js
 !test/test.js
