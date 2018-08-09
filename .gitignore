@@ -1,1 +1,3 @@
 node_modules/*
+!test/routes.js
+!test/test.js
